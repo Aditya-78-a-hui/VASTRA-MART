@@ -1,0 +1,1 @@
+<?php require 'includes/functions.php'; $p=productByCode($_GET['id']??''); if(!$p){flash('error','Product not found.');header('Location:products.php');exit;} addCart($p['code']); flash('success',$p['name'].' added to cart.'); header('Location:'.($_SERVER['HTTP_REFERER']??'products.php')); exit;
